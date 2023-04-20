@@ -1,0 +1,5 @@
+Core Concepts,
+
+Component,
+
+Solid princple some coding expamples
