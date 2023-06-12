@@ -1,0 +1,14 @@
+<p>products Catelouge!</p>
+<ul>
+    <li (click)="updateSelection('webcamera','phone')"> Webcamera
+    </li>
+    <li (click)="updateSelection('mobile phone','')"> Mobile Phone
+    </li>
+    <li (click)="updateSelection('hedset','')"> Hedset 
+    </li>
+    
+</ul>
+
+<!-- <app-product-list [name]="selectedProduct"></app-product-list> -->
+ <app-products-add [cartItem]="selectedProduct"></app-products-add>  
+ <app-products-add [cartItem]="produtsname"></app-products-add>    
