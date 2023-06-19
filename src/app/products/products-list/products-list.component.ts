@@ -6,11 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent {
-  selectedProduct ='None is selected';
-  
+ selectedProduct = '';
+ onBuy() {
+  window.alert(`You just bought ${this.selectedProduct}!`);
+  window.alert(event)
+ }
 
-  updateSelection(selectedProduct:string):void {
-    this.selectedProduct = selectedProduct;
-  }
+
+
+
 
 }

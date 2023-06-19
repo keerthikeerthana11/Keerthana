@@ -1,16 +1,7 @@
-<p>products Catelouge!</p>
-<ul>
-    <li (click)="updateSelection('webcamera')"> Webcamera
-    </li>
-    <li (click)="updateSelection('mobile phone')"> Mobile Phone
-    </li>
-    <li (click)="updateSelection('hedset')"> Hedset 
-    </li>
-</ul>
+<h2> product List</h2>
+<li (click)=" selectedProduct='webcam'"> Webcam</li>
+<li (click)=" selectedProduct='mobilePhone'">MobilePhone</li>
+<li (click)=" selectedProduct='lap'">Lap</li>
+<li (click)=" selectedProduct='tab'">Tab</li>
 
-<div 
-*ngFor="let index of [1,5,3,7]">
-    <p>My VAlue ::{{index}}</p>
-    </div>
-    <app-products-add></app-products-add> 
- <app-products-add [cartItem]="selectedProduct"></app-products-add> 
+<app-product-details [name]=" selectedProduct" (bought)="onBuy()"></app-product-details>
