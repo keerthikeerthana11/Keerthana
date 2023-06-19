@@ -1,0 +1,16 @@
+<p>products Catelouge!</p>
+<ul>
+    <li (click)="updateSelection('webcamera')"> Webcamera
+    </li>
+    <li (click)="updateSelection('mobile phone')"> Mobile Phone
+    </li>
+    <li (click)="updateSelection('hedset')"> Hedset 
+    </li>
+</ul>
+
+<div 
+*ngFor="let index of [1,5,3,7]">
+    <p>My VAlue ::{{index}}</p>
+    </div>
+    <app-products-add></app-products-add> 
+ <app-products-add [cartItem]="selectedProduct"></app-products-add> 
