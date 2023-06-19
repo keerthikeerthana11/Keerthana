@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
+import { Product } from '../product';
 
 @Component({
   selector: 'app-product-details',
@@ -7,21 +8,19 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ProductDetailsComponent {
 
-  @Input() name ='';
+  @Input() product: Product | undefined;
   @Output() bought = new EventEmitter();
-  // buynow()
-  // {
-   
 
-  //  window.alert(`You just bought ${this.name}`);
-  // window.alert(event)
-    
-  // }
+  ngOnChanges(changes: SimpleChanges): void {
+    const product = changes['product'];
+    if (!product.isFirstChange()) {
+      const oldValue = product.previousValue.name;
+      const newValue = product.currentValue.name;
+      console.log(`Product changed from ${oldValue} to ${newValue}`);
+    }
+  }
 
-  buynow() {
+  buy() {
     this.bought.emit();
-    const choosenIten = 'thanks for buying '+ this.name + ' which cost $50';
-
-    this.bought.emit(choosenIten);
   }
 }

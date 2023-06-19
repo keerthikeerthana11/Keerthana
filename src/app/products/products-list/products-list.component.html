@@ -1,7 +1,32 @@
-<h2> product List</h2>
-<li (click)=" selectedProduct='webcam'"> Webcam</li>
-<li (click)=" selectedProduct='mobilePhone'">MobilePhone</li>
-<li (click)=" selectedProduct='lap'">Lap</li>
-<li (click)=" selectedProduct='tab'">Tab</li>
+{{selectedProduct | json}}
 
-<app-product-details [name]=" selectedProduct" (bought)="onBuy()"></app-product-details>
+<h2>Product List</h2>
+<ul>
+  <!-- <li *ngFor="let product of products | sort" (click)="selectedProduct = product">
+    {{product.name}} 
+  </li>  -->
+</ul>
+
+<app-product-details
+*ngIf="selectedProduct; else noProduct"
+  [product]="selectedProduct"
+  (bought)="onBuy()">
+</app-product-details>
+<ng-template #noProduct>
+  <p>No product selected!</p>
+</ng-template>
+
+<!-- <h3>Offers</h3>
+<ng-template appProductHost></ng-template> -->
+
+<!-- ngFor basics-->
+
+<!-- <div *ngFor="let i of [1,2,3,45]" >
+  <li>
+    {{i}}
+  </li>
+</div>
+
+<div *ngFor = "let product of products">
+{{product | json}}
+</div> -->
