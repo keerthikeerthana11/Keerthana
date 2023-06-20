@@ -6,22 +6,57 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   styleUrls: ['./product-details.component.css']
 })
 export class ProductDetailsComponent {
+ 
 
   @Input() name ='';
-  @Output() bought = new EventEmitter();
-  // buynow()
-  // {
-   
+  @Output() bought = new EventEmitter<any>();  
 
-  //  window.alert(`You just bought ${this.name}`);
-  // window.alert(event)
-    
-  // }
+//   buynow()
+//   {    
+// const item ={
+//   "product":"",
+//   "cost": "",
+// };
+// item.product = this.name;
+// item.cost= this.calculate();
+// this.bought.emit(item);
+//   }
+// calculate():string{
+// if(!this.name) {
+//   throw new Error('Selected product not exist');
+// }
+// return "";
+// }
 
-  buynow() {
-    this.bought.emit();
-    const choosenIten = 'thanks for buying '+ this.name + ' which cost $50';
-
-    this.bought.emit(choosenIten);
-  }
+buynow()
+{    
+const item ={
+"product":"",
+"cost": 0,
+};
+item.product = this.name;
+item.cost= this.calculate();
+this.bought.emit(item);
 }
+calculate():number{
+  let amount =0;
+if(!this.name) {
+throw new Error('Selected product not exist');
+}
+switch (this.name) {
+  case 'webcam':
+    amount = 1000;    
+    break;
+    case 'mobilePhone':
+      amount = 1500;    
+      break;
+
+  default:
+    break;
+}
+return amount;
+
+ 
+}
+}
+
