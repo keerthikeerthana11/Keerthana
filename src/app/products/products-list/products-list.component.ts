@@ -7,13 +7,25 @@ import { Component } from '@angular/core';
 })
 export class ProductsListComponent {
  selectedProduct = '';
- onBuy() {
-  window.alert(`You just bought ${this.selectedProduct}!`);
+ 
+ assignValue(element:any){
+  this.selectedProduct = element;
+  console.log(this.selectedProduct)
+}
+ 
+//  onBuy() {
+//   window.alert(`You just bought ${this.selectedProduct}!`);
+//    this.assignValue(element:any){
+//   this.selectedProduct = element;
+//   console.log(this.selectedProduct)
+// }
+//  }
+
+
+onBuy(event:any):void {
+  // window.alert(`You just bought ${this.selectedProduct}!`);
   window.alert(event)
- }
-
-
-
+}
 
 
 }
