@@ -1,32 +1,27 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-product-details',
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent {
+export class ProductDetailsComponent implements OnChanges  {
  
 
   @Input() name ='';
   @Output() bought = new EventEmitter<any>();  
 
-//   buynow()
-//   {    
-// const item ={
-//   "product":"",
-//   "cost": "",
-// };
-// item.product = this.name;
-// item.cost= this.calculate();
-// this.bought.emit(item);
-//   }
-// calculate():string{
-// if(!this.name) {
-//   throw new Error('Selected product not exist');
-// }
-// return "";
-// }
+
+  ngOnChanges(changes:SimpleChanges):void{
+    const product = changes['name'];
+    if (!product.isFirstChange()) {
+      const oldValue = product.previousValue;
+      const newValue = product.currentValue;
+      console.log(`Product changed from ${oldValue} to ${newValue}`);
+    }
+
+  }
+
 
 buynow()
 {    
