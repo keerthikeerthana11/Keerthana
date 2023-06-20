@@ -12,6 +12,7 @@ export class ProductDetailsComponent {
   // buynow()
   // {
    
+// parent ku sent pannama child la display
 
   //  window.alert(`You just bought ${this.name}`);
   // window.alert(event)
@@ -19,7 +20,9 @@ export class ProductDetailsComponent {
   // }
 
   buynow() {
-    this.bought.emit();
+
+   // this.bought.emit(); nu we gave it product list and it show just one alert box
+    // this.bought.emit();
     const choosenIten = 'thanks for buying '+ this.name + ' which cost $50';
 
     this.bought.emit(choosenIten);

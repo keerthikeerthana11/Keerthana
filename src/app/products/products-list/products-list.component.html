@@ -4,4 +4,4 @@
 <li (click)=" selectedProduct='lap'">Lap</li>
 <li (click)=" selectedProduct='tab'">Tab</li>
 
-<app-product-details [name]=" selectedProduct" (bought)="onBuy()"></app-product-details>
+<app-product-details [name]=" selectedProduct" (bought)="onBuy($event)"></app-product-details>
