@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
+import {product} from'../productJson';
 
 @Component({
   selector: 'app-products-list',
@@ -8,32 +9,33 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
 })
 export class ProductsListComponent {
  
-  
- selectedProduct = '';
+  selectedProduct: product | undefined; // ={ name: '',price: 0, isOffer: false}
+//  selectedProduct = '';
  
- 
+productItems:product[]=[
+  {
+    name: 'Webcam',
+      price: 100,
+      isOffer: true
+  },
+  {
+    name:'microPhone',
+    price:200,
+    isOffer: false
+  }
+];
 
-
-
-  // ngOnInit():void{
-  //   console.log(`you are in productList 
-  //   ngOninit value of productdetails${this.productD}`);
-  // }
-
-  // ngOnInit():void {
+// onBuy() {
     
-  //   console.log(`you are in productList 
-  //   ngOninit value of productdetails${this.productD}`);
-  // }
-
-
-
-// onBuy(event:any):void{
-//   let result = `You just buy item ${event.product} 
-//   with cost of Rs: ${event.cost}`
-// window.alert(result)
-
+    
+//   window.alert(`You just bought ${this.selectedProduct?.name}!`);
 // }
+
+  
+
+
+
+
 
 
 

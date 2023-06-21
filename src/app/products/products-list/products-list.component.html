@@ -1,11 +1,5 @@
-<h2> product List</h2>
-<ul>
-<li (click)=" selectedProduct='webcam'"> Webcam</li>
-<li (click)=" selectedProduct='mobilePhone'">MobilePhone</li>
-<li (click)=" selectedProduct='lap'">Lap</li>
-<li (click)=" selectedProduct='tab'">Tab</li>
-<!-- <li (click)=assignValue($event)> NewComponent</li> -->
-</ul>
+ <div *ngFor = "let product of productItems">
+    {{product | json}}
+<!-- product we giving name,produuctItems ts file la iruthu varaththu -->
 
-<!-- <app-product-details [name]=" selectedProduct" (bought)="onBuy($event)"></app-product-details> -->
-<app-product-details ></app-product-details>
+    </div>  
