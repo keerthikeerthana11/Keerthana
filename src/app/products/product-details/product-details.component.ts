@@ -5,22 +5,14 @@ import { Component, EventEmitter, Input, OnChanges, Output, SimpleChanges } from
   templateUrl: './product-details.component.html',
   styleUrls: ['./product-details.component.css']
 })
-export class ProductDetailsComponent implements OnChanges  {
+export class ProductDetailsComponent  {
  
 
   @Input() name ='';
   @Output() bought = new EventEmitter<any>();  
 
 
-  ngOnChanges(changes:SimpleChanges):void{
-    const product = changes['name'];
-    if (!product.isFirstChange()) {
-      const oldValue = product.previousValue;
-      const newValue = product.currentValue;
-      console.log(`Product changed from ${oldValue} to ${newValue}`);
-    }
-
-  }
+ 
 
 
 buynow()
@@ -31,7 +23,8 @@ const item ={
 };
 item.product = this.name;
 item.cost= this.calculate();
-this.bought.emit(item);
+// this.bought.emit(item);
+window.alert(item);
 }
 calculate():number{
   let amount =0;
@@ -53,5 +46,11 @@ return amount;
 
  
 }
+
+
+// onBuy(event:any):void{
+//   let result = `You just buy item ${event.product} 
+//   with cost of Rs: ${event.cost}`
+// window.alert(result)
 }
 
