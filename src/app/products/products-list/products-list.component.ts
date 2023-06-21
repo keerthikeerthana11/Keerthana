@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { Product } from '../product';
 import { ProductDetailsComponent } from '../product-details/product-details.component';
 
@@ -8,8 +8,10 @@ import { ProductDetailsComponent } from '../product-details/product-details.comp
   styleUrls: ['./products-list.component.css']
 })
 export class ProductsListComponent {
+// implements AfterViewInit {
+
   selectedProduct: Product | undefined; // ={ name: '',price: 0, isOffer: false}
-  @ViewChild(ProductDetailsComponent) productDetail: ProductDetailsComponent | undefined;
+  // @ViewChild(ProductDetailsComponent) productDetail: ProductDetailsComponent | undefined;
   
   
   products: Product[] = [
@@ -30,19 +32,16 @@ export class ProductsListComponent {
     }
   ];
 
-  ngAfterViewInit(): void {
-    if (this.productDetail) {
-      console.log(this.productDetail.product);
-    }
-  }
+  // ngAfterViewInit(): void {
+  //   if (this.productDetail) {
+  //     console.log(this.productDetail.product);
+  //   }
+  // }
 
-  onBuy() {
+  // onBuy() {
     
     
-    window.alert(`You just bought ${this.selectedProduct?.name}!`);
-  }
-
-
-
+  //   window.alert(`You just bought ${this.selectedProduct?.name}!`);
+  // }
 
 }
