@@ -9,22 +9,22 @@ export class ProductDetailsComponent {
 
   @Input() name ='';
   @Output() bought = new EventEmitter();
-  // buynow()
-  // {
+  buynow()
+  {
    
 // parent ku sent pannama child la display
 
-  //  window.alert(`You just bought ${this.name}`);
+   window.alert(`You just bought ${this.name}`);
   // window.alert(event)
     
-  // }
-
-  buynow() {
-
-   // this.bought.emit(); nu we gave it product list and it show just one alert box
-    // this.bought.emit();
-    const choosenIten = 'thanks for buying '+ this.name + ' which cost $50';
-
-    this.bought.emit(choosenIten);
   }
+
+  // buynow() {
+
+  //  // this.bought.emit(); nu we gave it product list and it show just one alert box
+  //   // this.bought.emit();
+  //   const choosenIten = 'thanks for buying '+ this.name + ' which cost $50';
+
+  //   this.bought.emit(choosenIten);
+  // }
 }
