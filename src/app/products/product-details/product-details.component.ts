@@ -23,7 +23,9 @@ export class ProductDetailsComponent  {
 
   buy() {
     // this.bought.emit();
-    console.log(this.product?.name);
+    // console.log(this.product?.name);
+    // console.log(this.product?.price);
+    window.alert(` ${this.product?.name}!`);
 
   }
 
