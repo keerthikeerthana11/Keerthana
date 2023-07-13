@@ -1,24 +1,22 @@
-
-
-
-{{selectedProduct | json}}
-
 <h2>Product List</h2>
 <ul>
-  <li *ngFor="let product of products" (click)="selectedProduct = product">
+   <li *ngFor="let product of products" (click)="selectedProduct = product">
     {{product.name}} 
-  </li>
+  </li> 
 </ul>
 <!-- <app-product-detail [hidden] [product]=undefined (bought)="onBuy()">
 
 </app-product-detail> -->
 
- <app-product-details [product]="selectedProduct"></app-product-details>
-  <!-- (bought)="onBuy()"></app-product-details>  -->
+   <app-product-details
+   *ngIf="selectedProduct; else noProduct"
+   [product]="selectedProduct"
+   (bought)="onBuy()">
+  </app-product-details>     
 <ng-template #noProduct>
   <p>No product selected!</p>
 </ng-template>
-
+ 
 
 
 <!-- {{selectedProduct | json}}

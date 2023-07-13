@@ -1,11 +1,4 @@
-export interface  Product{
-    name: string;
-    price: number;
-    isOffer:boolean;
-  
-  }
-  
-  const prodcut ={
-    name: "",
-    price:0
-  }
+export interface Product {
+  name: string;
+  price: number;
+}
