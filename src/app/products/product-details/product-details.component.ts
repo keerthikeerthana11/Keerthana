@@ -14,6 +14,7 @@ export class ProductDetailsComponent implements OnChanges {
 @Input() product: Product | undefined;
 @Output() bought = new EventEmitter();
 
+
 ngOnChanges(changes: SimpleChanges): void {
   const product = changes['product'];
   if (!product.isFirstChange()) {
