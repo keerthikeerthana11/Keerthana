@@ -1,5 +1,8 @@
 let promise = new Promise((resolve,reject)=>{
-    resolve('hello');
+    setTimeout(()=>{
+        resolve('hello');
+    },3000)
+   
 
 });
 promise.then((message)=>
