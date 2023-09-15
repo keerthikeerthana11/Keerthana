@@ -1,5 +1,6 @@
 import { Observable } from "rxjs";
 const observable = new Observable((subscriber)=>{
+    console.log('hai');
     subscriber.next(1);
 
 });

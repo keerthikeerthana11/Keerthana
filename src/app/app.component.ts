@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+// import{appservice} from'./appservice';
+import { studends } from './student';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +8,31 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'sample';
+  mystudent:studends;
+  constructor(){
+    this.mystudent = new studends('ke','ko');
+    
+  }
+  selectedProduct ='';
+
+
+
+
+
+
+
+
+
 }
+ 
+  
+//     private title ='hai';
+//     public gettitle(): string{
+//       return this.title;
+
+//     }
+
+// }
+//   let obj = new AppComponent;
+//   console.log(obj.gettitle());
+// }

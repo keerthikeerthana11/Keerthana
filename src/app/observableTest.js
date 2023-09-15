@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 var rxjs_1 = require("rxjs");
 var observable = new rxjs_1.Observable(function (subscriber) {
+    console.log('hai');
     subscriber.next(1);
 });
 console.log('before');
