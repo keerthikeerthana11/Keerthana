@@ -4,11 +4,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SeletedproComponent } from './seletedpro/seletedpro.component';
+import { ValueFromServiceComponent } from './value-from-service/value-from-service.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SeletedproComponent
+    SeletedproComponent,
+    ValueFromServiceComponent
   ],
   imports: [
     BrowserModule,
