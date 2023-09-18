@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { student } from"./declarValue";
+import { studentDetails } from"./declarValue";
 
 @Injectable({
     providedIn:'root'
@@ -7,7 +7,7 @@ import { student } from"./declarValue";
 export class valuesservice{
     constructor(){}
 
-    getvalue(): student[]{
+    getvalue(): studentDetails[]{
         return[
             {
                 name: 'keerthi',

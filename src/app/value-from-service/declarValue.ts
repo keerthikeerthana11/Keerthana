@@ -1,4 +1,4 @@
-export interface student{
+export interface studentDetails{
     name : string;
     rollno : number;
 }

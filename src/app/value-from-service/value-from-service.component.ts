@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import {student}from "./declarValue";
+import {studentDetails}from "./declarValue";
 import {valuesservice}from "./valueservice"
 
 @Component({
@@ -9,13 +9,13 @@ import {valuesservice}from "./valueservice"
   providers:[valuesservice]
 })
 export class ValueFromServiceComponent implements OnInit{
-    studentDetails:student[]=[];
+    studentDet:studentDetails[]=[];
 
   constructor(private valueser:valuesservice){
 
   }
   ngOnInit(): void {
-    this.studentDetails = this.valueser.getvalue();
+    this.studentDet = this.valueser.getvalue();
   }
 
 
