@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
-import { student } from"./declarValue";
+import { studentDetails } from"./declarValue";
+import { Observable, of } from "rxjs";
 
 @Injectable({
     providedIn:'root'
@@ -7,8 +8,8 @@ import { student } from"./declarValue";
 export class valuesservice{
     constructor(){}
 
-    getvalue(): student[]{
-        return[
+    private student =[
+        
             {
                 name: 'keerthi',
                 rollno: 1
@@ -17,7 +18,15 @@ export class valuesservice{
                 name:'anitha',
                 rollno: 2
             }
-
         ];
-    }
+
+        
+
+
+getStuValue():Observable<studentDetails[]>
+{
+    return of(this.student);
+}
+
+    
 }

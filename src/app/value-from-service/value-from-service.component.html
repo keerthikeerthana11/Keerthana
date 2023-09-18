@@ -1,6 +1,6 @@
 <p>value-from-service works!</p>
 <ul>
-    <li *ngFor = " let stuDetails of studentDetails ">
+    <li *ngFor="let stuDetails of (studentValOb$ | async) ">
         {{stuDetails.name}}
         {{stuDetails.rollno}}
 

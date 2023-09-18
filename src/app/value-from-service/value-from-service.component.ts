@@ -1,6 +1,7 @@
 import { Component,OnInit } from '@angular/core';
-import {student}from "./declarValue";
+import {studentDetails}from "./declarValue";
 import {valuesservice}from "./valueservice"
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-value-from-service',
@@ -9,15 +10,21 @@ import {valuesservice}from "./valueservice"
   providers:[valuesservice]
 })
 export class ValueFromServiceComponent implements OnInit{
-    studentDetails:student[]=[];
+  studentValOb$: Observable<studentDetails[]> | undefined;
+    // studentDetails:student[]=[];
 
   constructor(private valueser:valuesservice){
 
   }
   ngOnInit(): void {
-    this.studentDetails = this.valueser.getvalue();
+    this.getvalue1();
+    // this.studentDetails = this.valueser.getvalue();
   }
 
+  private getvalue1()
+  {
+    this.studentValOb$ = this.valueser.getStuValue();
+  }
 
 
 }
