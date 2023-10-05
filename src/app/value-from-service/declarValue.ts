@@ -1,4 +1,5 @@
 export interface studentDetails{
     name : string;
-    rollno : number;
+    id : number;
+    price: number;
 }

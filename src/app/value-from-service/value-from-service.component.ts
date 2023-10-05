@@ -10,20 +10,22 @@ import { Observable } from 'rxjs';
   providers:[valuesservice]
 })
 export class ValueFromServiceComponent implements OnInit{
-  studentValOb$: Observable<studentDetails[]> | undefined;
-    // studentDetails:student[]=[];
+  
+    stu: studentDetails[] = [];
 
   constructor(private valueser:valuesservice){
 
   }
   ngOnInit(): void {
     this.getvalue1();
-    // this.studentDetails = this.valueser.getvalue();
   }
 
   private getvalue1()
   {
-    this.studentValOb$ = this.valueser.getStuValue();
+    
+    this.valueser.getStuValue().subscribe(stu =>{
+      this.stu = stu;
+    });
   }
 
 
