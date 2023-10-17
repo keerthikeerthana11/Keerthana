@@ -1,0 +1,6 @@
+<ul><li *ngFor="let prodetail of products">
+{{prodetail.name}}
+{{prodetail.price}}
+</li>
+</ul>
+<app-product-create (addValue)="onAdd($event)"></app-product-create>
