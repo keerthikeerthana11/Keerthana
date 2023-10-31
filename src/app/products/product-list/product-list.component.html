@@ -1,6 +1,11 @@
-<ul><li *ngFor="let prodetail of products">
+<ul><li *ngFor="let prodetail of products" (click)="selectedProduct = prodetail">
 {{prodetail.name}}
 {{prodetail.price}}
 </li>
 </ul>
 <app-product-create (addValue)="onAdd($event)"></app-product-create>
+<app-product-details *ngIf="selectedProduct; else noProduct"
+[id]="selectedProduct.id"></app-product-details>
+<ng-template #noProduct>
+    <p>No product selected!</p>
+  </ng-template>

@@ -8,6 +8,7 @@ import {ProductService} from'../productsService';
   styleUrls: ['./product-list.component.css']
 })
 export class ProductListComponent   {
+  selectedProduct : Product | undefined
 
   products: Product[]=[];
   constructor(private productservice:ProductService){ }

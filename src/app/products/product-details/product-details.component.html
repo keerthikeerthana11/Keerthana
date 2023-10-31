@@ -1,1 +1,6 @@
-<p>product-details works!</p>
+ <div *ngIf="product$ | async as product">
+    {{product.price}}
+    {{product.name}}
+    <input id ="price" type="number"#price/>
+<button (click)="changePrice(product,price.valueAsNumber)">change</button>
+ </div> 
