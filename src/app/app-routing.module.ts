@@ -8,9 +8,9 @@ const routes: Routes = [
     path:'details',component: ProductDetailsComponent,
     
   },
-  // {
-  //   path: 'create',component:ProductCreateComponent
-  // }
+  {
+    path: 'create',component:ProductCreateComponent
+  }
 ];
 
 @NgModule({
